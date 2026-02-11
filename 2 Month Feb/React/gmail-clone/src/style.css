@@ -1,0 +1,40 @@
+/* Universal Style */
+
+/* Universal Selctor * Applies to all HTML Elements and Tags */
+*{
+    margin : 0;             /*Remove default margin from all element */
+    padding : 0;              /*Remove default padding from all element */
+    box-sizing: border-box;   /* Include padding and border in element's total width/height*/
+}
+   
+/* Body - Main page container */
+body{
+   
+    background: white;
+    
+}
+
+
+/* Gmail Container - Main wrapper for entire app */
+.gmail-container{
+    height: 100vh;  /*full viewport height (100% of screen)*/
+    display: flex;  /*flexbox layout*/
+    flex-direction: column;   /*Stack children vertically*/
+}
+
+
+/* Header section CSS */
+.gmail-header{
+    display: flex;
+    text-align: center;  /*Vertically center all Items*/
+    padding: 8px 12px;   /*8px top-bottom and 12px left-right padding*/
+    height: 61px;        /*fix header height*/
+    background: #F8FAFD;
+}
+
+.header-search{
+    max-width: 500px;
+    background: #E9EEF6;
+    border: 0px solid black;
+    border-radius: 50px;
+}
