@@ -28,7 +28,7 @@ body{
     display: flex;
     text-align: center;  /*Vertically center all Items*/
     padding: 8px 12px;   /*8px top-bottom and 12px left-right padding*/
-    height: 61px;        /*fix header height*/
+    height:61px;        /*fix header height*/
     background: #F8FAFD;
 }
 
@@ -37,4 +37,65 @@ body{
     background: #E9EEF6;
     border: 0px solid black;
     border-radius: 50px;
+}
+
+
+/*************** Side bar ********/
+
+.compose-btn{
+    background: #C2E7FF;
+    border: none !important;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: ba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+    color: black !important;
+    text-align: center;
+}
+
+.sidebar{
+    padding: 9px;
+    background: #F8FAFD;
+}
+
+.compose-btn:hover{
+    background: #C2E7FF;
+    box-shadow: 0 1px 3px 1px rgba(60,64,67,.15) !important;  /*large-shadow*/
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-nav{
+    padding: 10px;
+}
+
+.nav-item{
+    padding: 10px 24px 0 20px;
+    height: 32px;
+    border-radius: 0 16 16 0 !important;
+    font-size: 13px;
+    color: #282124 !important;
+    margin: 2px 0;
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+/* *****************main containt********** */
+.main-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.email-list{
+    background: #fff;
+}
+
+.email-row{
+    height: 45px;
+    cursor: pointer;
 }
