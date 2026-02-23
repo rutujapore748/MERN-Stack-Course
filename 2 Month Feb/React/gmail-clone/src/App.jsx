@@ -94,7 +94,7 @@ function App() {
           </div>
         </header>
 
-        <div className='container-fluid'>
+        <div className=''>
           <div className='row h-100'>
 
 
@@ -204,7 +204,7 @@ function App() {
 
             {/* main containt */}
             <div className='col-md-10 main-content'>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-item-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button varient='link' className='star-btn p-0 btn p-2'>
@@ -220,8 +220,6 @@ function App() {
                   <span className='time p-2'>10:30 AM</span>
                 </div>
 
-              </div>
-              <div className='email-list'>
                 <div className='email-row d-flex align-item-center border-bottom unread'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button varient='link' className='star-btn p-0 btn p-2'>
@@ -235,124 +233,8 @@ function App() {
                     </span>
                   </span>
                   <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom read'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom read'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom read'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom unread'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-
-
                 </div>
 
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom unread'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom unread'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom unread'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
                 <div className='email-row d-flex align-item-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button varient='link' className='star-btn p-0 btn p-2'>
@@ -367,8 +249,7 @@ function App() {
                   </span>
                   <span className='time p-2'>10:30 AM</span>
                 </div>
-              </div>
-              <div className='email-list'>
+
                 <div className='email-row d-flex align-item-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button varient='link' className='star-btn p-0 btn p-2'>
@@ -383,8 +264,7 @@ function App() {
                   </span>
                   <span className='time p-2'>10:30 AM</span>
                 </div>
-              </div>
-              <div className='email-list'>
+
                 <div className='email-row d-flex align-item-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button varient='link' className='star-btn p-0 btn p-2'>
@@ -399,8 +279,67 @@ function App() {
                   </span>
                   <span className='time p-2'>10:30 AM</span>
                 </div>
-              </div>
-              <div className='email-list'>
+
+                <div className='email-row d-flex align-item-center border-bottom unread'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom unread'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom unread'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom unread'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
                 <div className='email-row d-flex align-item-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button varient='link' className='star-btn p-0 btn p-2'>
@@ -415,8 +354,112 @@ function App() {
                   </span>
                   <span className='time p-2'>10:30 AM</span>
                 </div>
-              </div>
-              <div className='email-list'>
+
+                <div className='email-row d-flex align-item-center border-bottom read'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom read'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom read'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom unread'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom unread'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom unread'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-item-center border-bottom unread'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button varient='link' className='star-btn p-0 btn p-2'>
+                    &#9734;
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{" "}
+                    <span className='snippet'>
+                      - Get started your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'>10:30 AM</span>
+                </div>
+
                 <div className='email-row d-flex align-item-center border-bottom unread'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button varient='link' className='star-btn p-0 btn p-2'>
@@ -432,74 +475,11 @@ function App() {
                   <span className='time p-2'>10:30 AM</span>
                 </div>
               </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom unread'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom unread'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom unread'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-item-center border-bottom unread'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button varient='link' className='star-btn p-0 btn p-2'>
-                    &#9734;
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{" "}
-                    <span className='snippet'>
-                      - Get started your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'>10:30 AM</span>
-                </div>
-              </div>
-              </div>
+
               <div className='box-2'>
-                <h1>Test</h1>
+                <h3>I</h3>
               </div>
+            </div>
           </div>
         </div>
       </div>

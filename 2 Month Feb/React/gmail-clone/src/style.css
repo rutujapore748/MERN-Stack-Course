@@ -114,18 +114,19 @@ ul {
 /* *****************main containt********** */
 .main-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: 16%;
     margin-top: 4%;
     padding-left: 0;
+    padding-right: 0;
 }
 
 .box-1{
-    width: 90%;
+    width: 95%;
 }
 
 .box-2{
-    width: 10%;
+    width: 5%;
     background: #F8FAFD;
 }
 
