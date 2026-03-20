@@ -11,7 +11,9 @@ const app = express()
 const cors = require('cors') 
 
 // Connect MangoDB Database
-const { connectDB } = require('./config/db')
+const { connectDB } = require('./config/db')       // Import function from another file
+
+const { addItem , editItem , deleteItem , getAllItems } = require("./controllers/itemsControllers")
 
 // Middleware: convert incoming request data into JSON format
 app.use(express.json()) 
@@ -67,8 +69,6 @@ const PORT = 9090
 
 // Start express server
 app.listen(PORT, () => {
-
     // Show message when server starts
     console.log('Server Started')
-
 })

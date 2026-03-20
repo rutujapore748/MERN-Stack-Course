@@ -1,6 +1,5 @@
+
 const mongoose = require('mongoose') 
-
-
 // ----------------------
 // Schema - Model (Database Structure)
 // ----------------------
@@ -27,7 +26,8 @@ const itemsSchema = new mongoose.Schema({
     unit: String
 })
 
-
 // Create collection/table called "Items"
-module.exports = mongoose.model("Items", itemsSchema)
+const Items = mongoose.model("Items", itemsSchema)
+
+module.exports = Items
 

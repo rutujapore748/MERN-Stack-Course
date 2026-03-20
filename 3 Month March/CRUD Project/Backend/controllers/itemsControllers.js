@@ -1,8 +1,9 @@
 
-import Items from "./ItemsModel"
-import { model } from "mongoose"
+//import { model } from "mongoose"
 
-const addItem = async () => {
+const Items = require("./../models/ItemsModel")
+
+const addItem = async (req,res) => {
      try {
 
         // Get item data sent from frontend
@@ -34,7 +35,7 @@ const addItem = async () => {
     }
 }
 
-const getAllItems = async () => {
+const getAllItems = async (req,res) => {
        try {
 
         // Fetch all documents from Items collection
@@ -54,7 +55,7 @@ const getAllItems = async () => {
 
 }
 
-const deleteItem = async () => {
+const deleteItem = async (req,res) => {
    try {
 
         // Get item ID from URL parameters
@@ -77,7 +78,7 @@ const deleteItem = async () => {
 
 }
 
-const editItem = async () => {
+const editItem = async (req,res) => {
     try {
 
         // Here we will receive item ID and updated data from frontend
