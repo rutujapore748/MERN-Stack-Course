@@ -9,6 +9,8 @@ const app = express()
 
 // Import CORS library (allows frontend apps to call backend APIs)
 const cors = require('cors') 
+
+// Connect MangoDB Database
 const { connectDB } = require('./config/db')
 
 // Middleware: convert incoming request data into JSON format
