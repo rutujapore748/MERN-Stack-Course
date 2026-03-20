@@ -210,7 +210,7 @@ function App() {
                         <td>{each.quantity}</td>
                         <td>{each.unit}</td>
                         <td className='d-flex'>
-                          <button className='btn btn-sucess'>Edit</button>
+                          <button className='btn btn-success'>Edit</button>
                           <button className='btn btn-danger mx-2'>Delet</button>
                         </td>
                       </tr>
