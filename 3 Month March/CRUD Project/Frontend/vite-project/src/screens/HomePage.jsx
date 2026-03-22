@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -6,7 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
-
 import "./../style.css"
 import { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
@@ -20,6 +19,7 @@ function HomePage() {
   const [quantity, setQuantity] = useState()
   const [unit, setUnit] = useState()
   const [itemData, setitemData] = useState()
+  const [id, setId] = useState()
 
 
   async function SubmitForm(e) {
@@ -28,29 +28,20 @@ function HomePage() {
       e.preventDefault();
 
       const data = {
-        itemName,
-        description,
-        purchasePrice,
-        sellingPrice,
-        quantity,
-        unit
+        name : itemName,
+        description : description,
+        purchasePrice : purchasePrice,
+        sellingPrice : sellingPrice,
+        quantity : quantity,
+        unit : unit,
       };
 
       console.log(data, "Form Submitted");
 
-      const apiResponse = await axios.post("http://localhost:9090/api/create-item",
-        {
-          name: itemName,
-          description: description,
-          purchasePrice: purchasePrice,
-          sellingPrice: sellingPrice,
-          quantity: quantity,
-          unit: unit
-        }
+      const apiResponse = await axios.post("http://localhost:9090/api/create-item", data)
+      .then(console.log("yes")).catch((error) => console.log(error));
 
-      ).then(console.log("yes")).catch((error) => console.log(error))
-
-      console.log(apiResponse)
+      console.log(apiResponse);
 
       getAllItemData();
 
@@ -68,10 +59,7 @@ function HomePage() {
     } catch { error } {
       console.log(error);
     }
-
-  };
-
-
+  }
 
   const getAllItemData = async () => {
 
@@ -79,7 +67,7 @@ function HomePage() {
 
       const apiResponse = await fetch("http://localhost:9090/api/get-all-item");
       const responseData = await apiResponse.json();
-      setData(responseData.data);
+      setItemData(responseData.data);
 
       console.log(responseData);
 
@@ -93,14 +81,14 @@ function HomePage() {
   }, []);
 
 
-  console.log(
+ // console.log(
     itemData, "itemData ==>"
-  );
+ // );
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const [id, setId] = useState()
+  //const [id, setId] = useState()
 
 
   const openDeleteModel = (_id) => {
@@ -189,7 +177,7 @@ function HomePage() {
                   <Form.Control type="number" placeholder="Enter Selling Price"
                     value={sellingPrice}
                     onChange={(event) => setSellingPrice(event.target.value)}
-                  />
+                    />
                 </Form.Group>
               </Row>
 
@@ -198,14 +186,14 @@ function HomePage() {
                   <Form.Label>Quantity</Form.Label>
                   <Form.Control type="number" placeholder='Enter Quantity'
                     onChange={(event) => setQuantity(event.target.value)}
+                      value={quantity}
                   />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridState">
                   <Form.Label>Unit</Form.Label>
                   <Form.Select defaultValue="Choose Unit"
-                    value={quantity}
-
+                    value = {unit}
                     onChange={(event) => setUnit(event.target.value)}
                   >
                     <option>Choose Unit</option>
