@@ -18,7 +18,7 @@ function HomePage() {
   const [sellingPrice, setSellingPrice] = useState()
   const [quantity, setQuantity] = useState()
   const [unit, setUnit] = useState()
-  const [itemData, setitemData] = useState()
+  const [itemData, setItemData] = useState()
   const [id, setId] = useState()
 
 
@@ -56,7 +56,7 @@ function HomePage() {
         theme: "light",
       });
 
-    } catch { error } {
+    } catch  (error)  {
       console.log(error);
     }
   }
