@@ -46,6 +46,45 @@ console.log(mainFunction())   //HOC
 })();
 
 
-// Heigher Order Component
+
 // Heigher Order Functions (HOC)
+// Takes another function as argument or return a function
+// Used for reusable or cleaner code
+const myFunction = (name) => {
+    const a = 5
+    console.log(a)
+    return "Hello" + name
+    var b = 5
+    console.log(b)
+}
+const processedFunction = (fun) => {
+    console.log("Processing Function...", fun("HOC"))
+}
+console.log(processedFunction(myFunction))   //  Processing Function... undefined
+
+
 // Destructing - Object , Array
+
+// Destructing - Object
+const data = {
+    name : "abc",
+    email : "abc@gmail.com",
+    age : 23
+}
+console.log(data, "==> Full Object")
+
+const { name , email , age } = data
+
+console.log(name) // abc
+
+console.log(email)  // abc@gmail.com
+
+// Array Destructing
+        //         0         1          2          3         4 
+const array = ["test 1" , "test 2" , "test 3" , "test 4" , "test 5"]
+
+const [ a, b , c ] = array
+
+console.log(a)  // Test 1
+console.log(b)  // Test 2
+console.log(c)  // Test 3
