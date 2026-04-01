@@ -47,6 +47,14 @@ const myPromise = new Promise(
     }
 )
 
+// Pending
+const testPromise = new Promise(
+    (resolve, reject) => {
+
+    }
+)
+console.log(testPromise)
+
 myPromise.then((res) => console.log(res)).catch((error) => console.log(error))
 
 // 3. async / await -  Asynchronous
@@ -55,3 +63,5 @@ const myFunction = async () => {
     // API Integration
     // DB Call - add,delete,update,get from DB - await
 }
+
+
