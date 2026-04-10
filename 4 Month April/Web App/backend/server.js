@@ -18,6 +18,8 @@ const cors = require('cors')
 const { connectDB } = require('./config/db')       // Import function from another file
 
 const { addItem , editItem , deleteItem , getAllItems } = require("./controllers/itemsControllers")
+const { login, register } = require('./controllers/authControllers')
+const { getDashboardCount } = require('./controllers/dashboardControllers')
 
 // Middleware: convert incoming request data into JSON format
 app.use(express.json()) 
@@ -32,20 +34,34 @@ app.use(cors())
 connectDB()
 
 
+// Auth API's - Authontication API's
+
+app.post ("/api/login" , login)
+
+app.post ("/api/register" , register)
+
+
+
+// Item API
 //  1. POST API to create new item
 app.post("/api/create-item", addItem)
-
 
 // 2. PUT API used to update existing item
 app.put("/api/update-item", editItem)
 
-
 // 3. DELETE API to remove item from database
 app.delete("/api/delete-item/:id", deleteItem)
 
-
 // 4. GET API to fetch all items from database
 app.get("/api/get-all-item", getAllItems)
+
+
+// Dashboard API
+// Get all count to show on Dashboard
+
+app.get("/api/get-dashboard" , getDashboardCount)
+
+
 
 
 
