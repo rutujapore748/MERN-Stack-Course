@@ -9,7 +9,7 @@ const connectDB = () => {
         // If connection successful show message in console
         // If error occurs print error
 
-        mongoose.connect("mongodb://127.0.0.1:27017/item-database").then(() => console.log("Mongo DB Connected")).catch((error) => console.log(error))
+        mongoose.connect(process.env.MANGO_DB_URL).then(() => console.log("Mongo DB Connected")).catch((error) => console.log(error))
 
     } catch (error) {
         console.log(error)

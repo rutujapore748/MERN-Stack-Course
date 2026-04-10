@@ -1,3 +1,7 @@
+require('dotenv').config() // or import 'dotenv/config' if you're using ES6
+
+console.log(process.env.PORT, "===>") // remove this after you've confirmed it is working
+
 // Backed Project // Node js  // Express Js // DB - MongoDb  
 //API's - URL - DB Operation - CRUD
 
@@ -65,10 +69,10 @@ app.get("/helth", (req, res) => {
 // ----------------------
 
 // Define port number where server will run
-const PORT = 9090
+const PORT = process.env.PORT || 1010
 
 // Start express server
 app.listen(PORT, () => {
     // Show message when server starts
-    console.log('Server Started')
+    console.log(`Server is running ${PORT}`)
 })
