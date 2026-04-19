@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
     // Item name
     name: String,
 
+    city: String,
+
+    mobileNo: Number,
+
     // User Email
     email: String,
 
