@@ -5,7 +5,7 @@ const Items = require("./../models/ItemsModel")
 
 const addItem = async (req,res) => {
      try {
-
+        console.log(req.user,"req ---userId")        
         // Get item data sent from frontend
         const { name, decription, sellingPrice, purchasePrice, quantity, unit } = req.body
 
@@ -16,7 +16,8 @@ const addItem = async (req,res) => {
             sellingPrice,
             purchasePrice,
             quantity,
-            unit
+            unit,
+            userId : req.userId
         })
 
         // Save item into MongoDB
