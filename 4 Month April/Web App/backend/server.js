@@ -20,6 +20,7 @@ const { connectDB } = require('./config/db')       // Import function from anoth
 const { addItem , editItem , deleteItem , getAllItems } = require("./controllers/itemsControllers")
 const { login, register } = require('./controllers/authControllers')
 const { getDashboardCount } = require('./controllers/dashboardControllers')
+const authMiddleware = require('./authMiddleware/authMiddleware')
 
 // Middleware: convert incoming request data into JSON format
 app.use(express.json()) 
@@ -44,7 +45,7 @@ app.post ("/api/register" , register)
 
 // Item API
 //  1. POST API to create new item
-app.post("/api/create-item", addItem)
+app.post("/api/create-item", authMiddleware, addItem)
 
 // 2. PUT API used to update existing item
 app.put("/api/update-item", editItem)
