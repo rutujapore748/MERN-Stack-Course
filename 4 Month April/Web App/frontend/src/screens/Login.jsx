@@ -11,11 +11,13 @@ const Login = () => {
 
 
   const submitRegisterForm = async () => {
-    const paylode = {
+    const payload = {
       name: name,
       email: email,
     }
-    const apiResponse = await axios.post('${ import.meta.env.VITE_API_URL }/ login', paylode).then((response) => navigate("/Dashboard")).catch((error)) => console.log((error))
+    const apiResponse = await axios
+    .post(`${ import.meta.env.VITE_API_URL }/ login`, payload)
+    .then((response) => navigate("/Dashboard")).catch((error) => console.log(error))
     console.log(apiResponse, "api response ==>");
   }
 
@@ -58,4 +60,4 @@ export default Login
 
 
 
-export default Register
+

@@ -4,27 +4,34 @@ import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-
   const navigate = useNavigate();
+
   const [name, setName] = useState();
   const [email, setEmail] = useState();
-  const [pass, setPass] = useState();
+  const [pass, setPassword] = useState();
 
 
   const submitRegisterForm = async () => {
-    const paylode = {
+    const payload = {
       name: name,
       email: email,
-      pass: pass
-    }
-    const apiResponse = await axios.post('${import.meta.env.VITE_API_URL } / register', paylode).then((response) => navigate("/dashboard")).catch((error)) => console.log((error))
-      console.log(apiResponse, "api response ==>");
-  }
+      password: password,
+    };
+
+    const apiResponse = await axios
+    .post(`${import.meta.env.VITE_API_URL } / register`, paylode) //Loging success message when request accepted
+    
+      console.log("User Registered Successfully", apiResponse.data.token);
+
+      localStorage.setItem("token",apiResponse.data.token); // Store the token in local storage
+
+      console.log(apiResponse, "apiResponse ==>");
+  };
 
 
 return (
-  <div className="m-5">
-    <Card className="text-center">
+  <div className="m-5 text-center">
+    <Card>
       <Card.Body>
         <Card.Title>Register</Card.Title>
 
@@ -66,4 +73,4 @@ export default Register
 
 
 
-export default Register
+
