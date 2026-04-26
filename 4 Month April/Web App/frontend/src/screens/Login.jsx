@@ -1,13 +1,17 @@
 import { useState } from "react";
-import axios from "axios";
+import React from "react";
+import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
 
-  const navigate = useNavigate();
-  const [email, setEmail] = useState();
-  const [pass, setPass] = useState();
+ // const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleLoginSubmit = async () => {
+
+  }
 
 
   const submitRegisterForm = async () => {
@@ -29,31 +33,32 @@ return (
         <Card.Title>Login</Card.Title>
 
         <form>
-          <input type ="text" placeholder="Enter Email"  value= {email}
-          onChange={(e)=> setEmail(e.target.value)}/>
+          <input type ="text" placeholder="Enter Email" />
           <br />
           <br />
 
-          <input type ="password" placeholder="Enter Password"  value= {pass}
-          onChange={(e)=> setPass(e.target.value)}/>
+          <input type ="text" placeholder="Enter Password" />
           <br />
           <br />
 
-          <button className="btn btn-success" onClick={submitRegisterForm}> Login </button>
+          <button className="btn btn-success"> 
+            <a href = "/dashboard" className = "text-white">Login</a> 
+          </button>
           <br />
           <br />
           <p className="text-danger">Don't have an account?{""}
             <a href ="/register">Register</a>
           </p>      
         </form>
+
+        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
-    </Card>
-    
+    </Card>    
   </div>
 );
 };
 
-export default Login
+export default Login;
 
 
 

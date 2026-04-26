@@ -6,10 +6,9 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
 
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [pass, setPassword] = useState();
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [pass, setPassword] = useState("");
 
   const submitRegisterForm = async () => {
     const payload = {
@@ -19,12 +18,13 @@ const Register = () => {
     };
 
     const apiResponse = await axios
-    .post(`${import.meta.env.VITE_API_URL } / register`, paylode) //Loging success message when request accepted
+    .post(`${import.meta.env.VITE_API_URL_BACKEND } / register`, paylode) //Loging success message when request is successful
     
       console.log("User Registered Successfully", apiResponse.data.token);
 
       localStorage.setItem("token",apiResponse.data.token); // Store the token in local storage
 
+       navigate("/dashboard");
       console.log(apiResponse, "apiResponse ==>");
   };
 
@@ -36,26 +36,42 @@ return (
         <Card.Title>Register</Card.Title>
 
         <form>
-          <input type ="text" placeholder="Enter your name" name="name" value= {name}
-          onChange={(e)=> setName(e.target.value)}/>
+          <input type ="text" 
+          placeholder="Enter name" 
+          name="name" 
+          value= {name}
+          onChange={(e)=> setName(e.target.value)}
+          />
           <br />
           <br />
 
-           <input type ="text" placeholder="Enter your email" name="email" value= {email}
-          onChange={(e)=> setEmail(e.target.value)}/>
+           <input 
+           type ="text" 
+           placeholder="Enter email" 
+           name="email" 
+           value= {email}
+          onChange={(e)=> setEmail(e.target.value)}
+          />
           <br />
           <br />
 
-          <input type ="password" placeholder="Enter your password" name="pass" value= {pass}
-          onChange={(e)=> setPass(e.target.value)}/>
+          <input 
+          type ="text" 
+          placeholder="Enter password" 
+          name="password" 
+          //value= {password}
+          onChange={(e)=> setPassword(e.target.value)}
+          />
           <br />
           <br />
 
-          <button className="btn btn-success" onClick={submitRegisterForm}> Register </button>
+          <button className="btn btn-success" onClick={submitRegisterForm}> 
+            Register 
+          </button>
           <br />
           <br />
-          <p className="text-danger">Don't have an account?{""}
-            <a href ="/register">Register</a>
+          <p className="text-danger">Already have an account?
+            <a href ="/">Login</a>
           </p>      
         </form>
       </Card.Body>
@@ -63,10 +79,9 @@ return (
     
   </div>
 );
-
 };
 
-export default Register
+export default Register;
 
 
 
