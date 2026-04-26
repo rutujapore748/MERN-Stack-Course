@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 // Schema - Model (Database Structure)
 // ----------------------
 
-// Define structure of item document in MongoDB
+// Define structure of User document in MongoDB
 const userSchema = new mongoose.Schema({
 
     // Item name
@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     password: String,
 })
 
-// Create collection/table called "Items"
+// Create collection/table called "Users"
 const Users = mongoose.model("Users", userSchema)
 
 module.exports = Users

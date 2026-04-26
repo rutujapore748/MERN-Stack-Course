@@ -7,13 +7,13 @@ const authMiddleware = async( req , res , next ) => {
 
         if(token){
 
-            const decode = jwt.verify(token, process,env.JWT_SECRET_KEY)
-            console.log(decode, "---- ---->")
+            const decode = jwt.verify(token, process.env.JWT_SECRET_KEY)
+            console.log(decode, "=== ==>")
             req.user = decode.userId
             next()
 
         }else{
-            res.status(401).json({message : "no token"});
+            res.status(401).json({message : "no token available"});
         }
         
     } catch (error) {

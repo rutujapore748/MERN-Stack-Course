@@ -86,7 +86,7 @@ app.get("/helth", (req, res) => {
 // ----------------------
 
 // Define port number where server will run
-const PORT = process.env.PORT || 1010
+const PORT = 1010
 
 // Start express server
 app.listen(PORT, () => {

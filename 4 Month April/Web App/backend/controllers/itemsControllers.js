@@ -5,7 +5,8 @@ const Items = require("./../models/ItemsModel")
 
 const addItem = async (req,res) => {
      try {
-        console.log(req.user,"req ---userId")        
+        console.log(req.userId,"===> userId")       
+         
         // Get item data sent from frontend
         const { name, decription, sellingPrice, purchasePrice, quantity, unit } = req.body
 

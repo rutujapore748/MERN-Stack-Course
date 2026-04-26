@@ -41,13 +41,24 @@ function Item() {
         unit : unit,
       };
 
+
+      // Logging the form data to the console for debugging
       console.log(data, "Form Submitted");
 
-      const apiResponse = await axios.post(`${import.meta.env.VITE_API_URL_BACKEND}/create-item`, data)
-      .then(console.log("yes")).catch((error) => console.log(error));
+       // Sending a POST request to the backend API to create a new item
+      const apiResponse = await axios
+      .post(`${import.meta.env.VITE_API_URL_BACKEND}/create-item`, data ,{
+        headers : {"x-auth-token" : getToken()}
+      })
+       // Logging success message when request is successful
+      .then(console.log("yes"))
+      // Logging error if the request fails
+      .catch((error) => console.log(error));
 
+       // Logging the full API response to the console
       console.log(apiResponse);
 
+      // Calling getAllItemsData to refresh the item list after creating a new item
       getAllItemData();
 
       toast.success('Form Submitted', {
@@ -69,8 +80,14 @@ function Item() {
   const getAllItemData = async () => {
 
     try {
+      // APi Integration - fetch function
+      // Calling the GET API to fetch all items from the backend
 
-      const apiResponse = await fetch(`${import.meta.env.VITE_API_URL_BACKEND}/get-all-item`);
+      const apiResponse = await fetch(
+        `${import.meta.env.VITE_API_URL_BACKEND}/get-all-item`,
+      );
+
+
       const responseData = await apiResponse.json();
       setItemData(responseData.data);
 
@@ -84,17 +101,20 @@ function Item() {
   useEffect(() => {
     getAllItemData();
 
-    getToken()
+    getToken();
   }, []);
+
+   // Function to close the delete confirmation modal by setting show state to false
+  const handleClose = () => setShow(false);
 
 
  // console.log(
-    itemData, "itemData ==>"
+  //  itemData, "itemData ==>"
  // );
 
-  const [show, setShow] = useState(false);
+  //const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+  //const handleClose = () => setShow(false);
   //const [id, setId] = useState()
 
   
@@ -115,19 +135,21 @@ function Item() {
 
   const handleDelete = async () => {
     try {
-      console.log(id, "id==>")
+      console.log(id, "id==>");
 
-      const apiResponse = await axios.delete(`${import.meta.env.VITE_API_URL_BACKEND}/delete-item/${id}`)
+      const apiResponse = await axios.delete(
+        `${import.meta.env.VITE_API_URL_BACKEND}/delete-item/${id}`,
+      );
 
-      setShow(false)
-      console.log(apiResponse)
+      setShow(false);
+      console.log(apiResponse);
       getAllItemData();
 
     } catch (error) {
-      console.log(error)
+      console.log(error);
 
     }
-  }
+  };
 
   return (
     <>
@@ -145,7 +167,10 @@ function Item() {
         theme="light"
       />
 
-      <h1 className='text-danger text-center my-5'> <b>Manage Items</b> </h1>
+      <h1 className='text-danger text-center my-5'> 
+        {" "}
+      <b>Manage Items</b> {" "}
+      </h1>
 
       <div className='container'>
         <div className='row'>

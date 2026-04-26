@@ -6,6 +6,13 @@ const mongoose = require('mongoose')
 
 // Define structure of item document in MongoDB
 const itemsSchema = new mongoose.Schema({
+    //who is adding
+    userId : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "Users",
+        required : true
+    },
+    
 
     // Item name
     name: String,
