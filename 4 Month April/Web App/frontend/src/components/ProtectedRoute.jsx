@@ -1,17 +1,26 @@
-import React from 'react'
 import { useNavigate } from "react-router-dom"
 
 
-const ProtectedRoute = ({children}) => {
+export const ProtectedRoute = ({children}) => {
       const navigate = useNavigate();
     
     const token = localStorage.getItem("token")
 
-    if(token){
-        return children
-    }else{
-      return  navigate("/");
+    if(!token){
+        return <Navigate to= "/" />
     }
-}
 
-export default ProtectedRoute
+        return children
+  }
+
+export const PublicRoute = ({children}) => {
+          
+    const token = localStorage.getItem("token")
+
+    if(token){
+        return <Navigate to= "/dashboard" />
+    }
+
+        return children
+  }
+

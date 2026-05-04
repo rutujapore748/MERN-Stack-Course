@@ -7,7 +7,7 @@ import Dashboard from './screens/Dashboard';
 
 import AuthNavBar from './components/AuthNavBar';
 import { ToastContainer } from "react-toastify";
-import ProtectedRoute from "./components/ProtectedRoute";
+import { ProtectedRoute , PublicRoute } from "./components/ProtectedRoute";
 
 
 const App = () => {
@@ -25,11 +25,22 @@ const App = () => {
           autoClose={5000}
         />
 
-
+       {/* AuthNavBar is shown on all pages except login and register */}
        <AuthNavBar/>
+
+        {/* Routes holds all the page paths of our app */}
         <Routes>
-        <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+
+            {/* "/" is the login page
+              Wrapped in PublicRoute so logged in users go to dashboard instead */}
+        <Route path="/" element={<PublicRoute> <Login /> </PublicRoute>} />
+
+               {/* "/register" is the register page
+              Wrapped in PublicRoute so logged in users go to dashboard instead */}
+          <Route path="/register" element={<PublicRoute> <Register /> </PublicRoute>} />
+
+          {/* "/item" is protected - only logged in users can see it
+              If no token, ProtectedRoute sends user back to login */}
           <Route
             path="/item"
             element={
@@ -38,6 +49,9 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
+           {/* "/dashboard" is protected - only logged in users can see it
+              If no token, ProtectedRoute sends user back to login */}
           <Route
             path="/dashboard"
             element={
