@@ -1,6 +1,6 @@
 require('dotenv').config() // or import 'dotenv/config' if you're using ES6
 
-console.log(process.env.PORT, "===>") // remove this after you've confirmed it is working
+//console.log(process.env.PORT, "===>") // remove this after you've confirmed it is working
 
 // Backed Project // Node js  // Express Js // DB - MongoDb  
 //API's - URL - DB Operation - CRUD
@@ -48,21 +48,19 @@ app.post ("/api/register" , register)
 app.post("/api/create-item", authMiddleware, addItem)
 
 // 2. PUT API used to update existing item
-app.put("/api/update-item", editItem)
+app.put("/api/update-item", authMiddleware, editItem)
 
 // 3. DELETE API to remove item from database
-app.delete("/api/delete-item/:id", deleteItem)
+app.delete("/api/delete-item/:id", authMiddleware, deleteItem)
 
 // 4. GET API to fetch all items from database
-app.get("/api/get-all-item", getAllItems)
+app.get("/api/get-all-item", authMiddleware, getAllItems)
 
 
 // Dashboard API
 // Get all count to show on Dashboard
 
-app.get("/api/get-dashboard" , getDashboardCount)
-
-
+app.get("/api/get-dashboard" , authMiddleware, getDashboardCount)
 
 
 
@@ -71,7 +69,7 @@ app.get("/api/get-dashboard" , getDashboardCount)
 // ----------------------
 
 // Simple API to check server is running or not
-app.get("/helth", (req, res) => {
+app.get("api/helth", (req, res) => {
 
     res.status(200).json({
         message: "Server is Runing"
@@ -86,7 +84,7 @@ app.get("/helth", (req, res) => {
 // ----------------------
 
 // Define port number where server will run
-const PORT = 1010
+const PORT = process.env.PORT || 1010
 
 // Start express server
 app.listen(PORT, () => {

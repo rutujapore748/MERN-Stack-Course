@@ -21,9 +21,13 @@ const register = async( req , res ) => {
             password : pass
         })
 
-        const token = jwt.sign({ userId : user._id }, process.env.JWT_SECRET_KEY,{
+        const token = jwt.sign(
+            { userId : user._id , email : email }, 
+            process.env.JWT_SECRET_KEY,
+            {
             expiresIn: "30d"
-        })
+            }
+        )
 
          res.status(201).json({
             message: "Register Account Successful",
@@ -51,7 +55,7 @@ const login = async( req , res ) => {
 
 
             const token = jwt.sign({ userId : user?._id, email: email }, process.env.JWT_SECRET_KEY,{
-            expiresIn: "30d"
+            expiresIn: "1d"
             })
 
             if (user) {
@@ -60,7 +64,7 @@ const login = async( req , res ) => {
                 token : token
                 })
             } else{
-                res.status(201).json({
+                res.status(404).json({
                     message: "Login Failed",
                 })
 
@@ -75,4 +79,4 @@ const login = async( req , res ) => {
     }
 }
 
-module.exports = { login , register }
+//module.exports = { login , register }
