@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-export default function Homec() {
+export default function Home3() {
   const inputRef = useRef(null);
 
   const handleFocus = () => {

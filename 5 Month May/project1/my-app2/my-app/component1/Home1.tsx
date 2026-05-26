@@ -20,11 +20,11 @@ function reducer(state, action) {
   }
 }
 
-export default function Home() {
+export default function Home1() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "30px" }}>
       <h1>Count: {state.count}</h1>
 
       <button onClick={() => dispatch({ type: "increment" })}>
