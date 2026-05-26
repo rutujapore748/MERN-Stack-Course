@@ -65,3 +65,5 @@ console.log(value);
 const x = 10, y = 20;
 const obj = { x, y, sum: () => x + y };
 console.log(obj.sum());
+
+
